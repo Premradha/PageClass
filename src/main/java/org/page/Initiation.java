@@ -14,14 +14,14 @@ import org.utils.Constants;
 import org.utils.GetExcel;
 import org.utils.Screenshot;
 
-import ch.qos.logback.classic.BasicConfigurator;
+import org.apache.logging.log4j.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Initiation extends Constants {
 	
 	protected WebDriver driver ;
 	
-	public static Logger log ;
+	public static org.apache.logging.log4j.Logger log ;
 	
 	public static GetExcel excel = new GetExcel ();
 	
@@ -41,7 +41,9 @@ public class Initiation extends Constants {
 	@BeforeSuite
 	public void logging(){
 	
-	log = LogManager.getLogger(this.getClass().getName());
+//	log = LogManager.getLogger(this.getClass().getName());
+		
+		log = LogManager.getLogger(this.getClass().getName());
 			
 	}
 	
